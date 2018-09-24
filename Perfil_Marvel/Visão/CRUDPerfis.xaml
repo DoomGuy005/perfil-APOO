@@ -1,0 +1,77 @@
+﻿<Window x:Class="Perfil_Marvel.Visão.CRUDPerfis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perfil_Marvel.Visão"
+        mc:Ignorable="d"
+        Title="Inserir Perfil" Height="720" Width="1280">
+    <Window.Background>
+        <ImageBrush ImageSource="img/sistema/bg.png" Opacity="0.5"/>
+    </Window.Background>
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Name="btnVoltar" Height="55" Width="55" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" BorderThickness="2" BorderBrush="White" Click="btnVoltar_Click" VerticalAlignment="Center">
+                <StackPanel>
+                    <Image Width="30" Source="img/sistema/left-arrow.png" />
+                </StackPanel>
+            </Button>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Image Source="img/sistema/logomarvel.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Nome do Perfil" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="10" BorderThickness="2" BorderBrush="White"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Name="txtNome" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" VerticalContentAlignment="Center" Padding="5" Background="Black" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" UndoLimit="30" FontSize="16" Height="35" TextChanged="txtNome_TextChanged"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Categoria" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="10" BorderThickness="2" BorderBrush="White"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="txtCategoria" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" VerticalContentAlignment="Center" Padding="5" Background="Black" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" UndoLimit="30" FontSize="16" Height="35" TextChanged="txtCategoria_TextChanged"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Agora vamos definir as dicas do novo Perfil, ok?" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="10" BorderThickness="2" BorderBrush="White"/>
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Se precisar, selecione ao lado e edite" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" BorderThickness="2,0,2,2" BorderBrush="White"/>
+
+                <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Name="txtDica" VerticalAlignment="Center" HorizontalAlignment="Center" Width="350" VerticalContentAlignment="Center" Padding="5" Background="Black" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" UndoLimit="30" FontSize="16" Height="80"/>
+                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Name="btnAdicionarDica" Content="Adicionar Dica" Height="40" Width="270" HorizontalAlignment="Center" Padding="10" Background="#FFED1A23" FontFamily="REVOLUTION" VerticalAlignment="Center" Foreground="White" BorderBrush="White" BorderThickness="2" Click="btnAdicionarDica_Click" />
+
+                <ListView Name="lDicas" Grid.Row="0" Grid.Column="2" Grid.RowSpan="5" Height="300" Width="360" Background="Black" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" BorderBrush="White" GotFocus="lDicas_GotFocus">
+                    
+                    
+                </ListView>
+                <Button Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Name="btnEditarDica" Content="Editar Dica" Height="40" Width="270" HorizontalAlignment="Center" Padding="10" Background="#FFED1A23" FontFamily="REVOLUTION" VerticalAlignment="Center" Foreground="White" BorderBrush="White" BorderThickness="2" IsEnabled="False" Click="btnEditarDica_Click"/>
+            </Grid>
+
+            <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="btnAdicionarPerfil" Content="Adicionar Perfil" Height="40" Width="402" HorizontalAlignment="Center" Padding="10" Background="#FFED1A23" FontFamily="REVOLUTION" VerticalAlignment="Center" Foreground="White" BorderBrush="White" BorderThickness="2" Click="btnAdicionarPerfil_Click"/>
+
+            <Grid Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="Informática para Internet 2016.1" FontFamily="Raleway SemiBold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF151515" FontSize="12" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

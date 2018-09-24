@@ -1,0 +1,126 @@
+﻿<Window x:Class="Perfil_Marvel.Visão.JogoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perfil_Marvel"
+        mc:Ignorable="d"
+         Title="Iniciar Partida" Height="720" Width="1280" ResizeMode="CanMinimize"
+        Cursor="Arrow" FontSize="18">
+    <Window.Background>
+        <ImageBrush ImageSource="img/sistema/bg.png" Opacity="0.5"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Button Margin="10,35.5,0,10" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Name="btnVoltar" Height="30" Width="30" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2" BorderBrush="White" Click="btnVoltar_Click">
+            <StackPanel>
+                <Image Width="20" Source="img/sistema/left-arrow.png" />
+            </StackPanel>
+        </Button>
+
+        <!--Espaço do Jogador 1-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Ellipse Height="150" Width="150">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="img/sistema/logomarvel.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <Label Name="pJ1" Width="100" Grid.Column="3" Content="10 pnts" Foreground="White" Background="Black" FontFamily="Raleway SemiBold" FontSize="20" Padding="10" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+
+        <!--Espaço do Jogador 2-->
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Ellipse Height="150" Width="150">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="img/sistema/logomarvel.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label Name="pJ2" Width="100" Grid.Column="3" Content="10 pnts" Foreground="White" Background="Black" FontFamily="Raleway SemiBold" FontSize="20" Padding="10" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        </Grid>
+
+        <!--Espaço do Jogador 3-->
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Ellipse Height="150" Width="150">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="img/sistema/logomarvel.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label Name="pJ3" Width="100" Grid.Column="3" Content="10 pnts" Foreground="White" Background="Black" FontFamily="Raleway SemiBold" FontSize="20" Padding="10" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+
+        <!--Espaço do Jogador 4-->
+        <Grid Grid.Row="3" Grid.Column="3">
+            <Ellipse Height="150" Width="150">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="img/sistema/logomarvel.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label Name="pJ4" Width="100" Grid.Column="3" Content="10 pnts" Foreground="White" Background="Black" FontFamily="Raleway SemiBold" FontSize="20" Padding="10" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        </Grid>
+
+
+        <!--Espaço de Ações do Jogo-->
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Background="#FFC80023" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!--Jogador da Vez-->
+            <Label Grid.Row="1" Grid.Column="0" Content="Jogador da Vez" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="10" BorderThickness="2" BorderBrush="White"/>
+            <Label Name="lJogadorVez" Grid.Row="2" Grid.Column="0" Content="Jogador 1" Foreground="White" Background="Black" FontFamily="Raleway SemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" BorderThickness="2,0,2,2" BorderBrush="White"/>
+
+            <!--Botão Palpite e Dica-->
+            <Button Grid.Row="1" Grid.Column="1" Name="btnPalpite" Content="Palpite" Height="40" Width="170" HorizontalAlignment="Center" Padding="5" Background="#FFED1A23" FontFamily="REVOLUTION" FontSize="16" VerticalAlignment="Center" Foreground="White" BorderBrush="White" BorderThickness="2" Click="btnPalpite_Click"/>
+            <Button Grid.Row="2" Grid.Column="1" Name="btnDica" Content="Dica" Height="40" Width="170" HorizontalAlignment="Center" Padding="5" Background="#FFED1A23" FontFamily="REVOLUTION" FontSize="16" VerticalAlignment="Center" Foreground="White" BorderBrush="White" BorderThickness="2" Click="btnDica_Click"/>
+            
+            <!--Texto Dica - Ao clicar em Dica atualiza-->
+            <TextBox Visibility="Collapsed" Name="txtDica" Text="Quer uma ajuda? Selecione Dica" Width="475" Padding="10" BorderThickness="2" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"  Background="Black" HorizontalAlignment="Center" Foreground="White" BorderBrush="White" FontFamily="Raleway SemiBold" Focusable="False"/>
+
+            <!--Label + TextBox Palpite - Ao clicar em Palpite aparece-->
+            <Label Grid.Row="1" Grid.Column="2" Content="Ja sabe o que fazer? Palpite!" Foreground="White" Width="430" Background="#FFED1A23" FontFamily="REVOLUTION" VerticalAlignment="Bottom" Padding="10" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="2" Name="txtPalpite" Text="Meu palpite" Width="380" Height="45" Padding="10" BorderThickness="2,0,2,2" Background="Black" HorizontalAlignment="Center" Foreground="White" BorderBrush="White" FontFamily="Raleway SemiBold" VerticalAlignment="Top"/>
+
+            <!--Logo Marvel-->
+            <Image Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Source="img/sistema/logomarvel.png" HorizontalAlignment="Center" VerticalAlignment="Top">
+            </Image>
+        </Grid>
+
+        <!--Espaço do conteúdo em tela de jogo: 8/11 | Quantidade de Jogadores-->
+        <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+
+    </Grid>
+</Window>

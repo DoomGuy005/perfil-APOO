@@ -1,0 +1,87 @@
+﻿<Window x:Class="Perfil_Marvel.Visão.IniciarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perfil_Marvel"
+        mc:Ignorable="d"
+         Title="Iniciar Partida" Height="720" Width="1280" ResizeMode="CanMinimize"
+        Cursor="Arrow" FontSize="18">
+    <Window.Background>
+        <ImageBrush ImageSource="img/sistema/bg.png" Opacity="0.5"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" Name="btnVoltar" Height="55" Width="55" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" BorderThickness="2" BorderBrush="White" Click="btnVoltar_Click" VerticalAlignment="Center">
+            <StackPanel>
+                <Image Width="30" Source="img/sistema/left-arrow.png" />
+            </StackPanel>
+        </Button>
+        
+        <!--Espaço da Logo em tela de jogo: 2/11-->
+        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+            <Image Source="img/sistema/logomarvel.png" HorizontalAlignment="Center" VerticalAlignment="Center">
+            </Image>
+        </Grid>
+
+        <!--Espaço do conteúdo em tela de jogo: 6/11 | Quantidade de Jogadores-->
+        <!--Título/botão: 2/7 | Conteúdo: 1/7-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Escolha o numero de jogadores" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" BorderThickness="2" BorderBrush="White"/>
+
+            <Rectangle Grid.Row="1" Grid.RowSpan="3" Width="180" Height="160" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Rectangle Grid.Row="1" Grid.RowSpan="3" Width="176" Height="156" Fill="#FFED1A23" HorizontalAlignment="Center" VerticalAlignment="Center" Panel.ZIndex="1" />
+
+            <RadioButton Name="rb2Jogadores" Panel.ZIndex="2" Grid.Row="1" GroupName="nJog" Content="2 jogadores" IsChecked="True" Foreground="White" FontFamily="Raleway SemiBold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <RadioButton Name="rb3Jogadores" Panel.ZIndex="2" Grid.Row="2" GroupName="nJog" Content="3 jogadores" Foreground="White" FontFamily="Raleway SemiBold" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <RadioButton Name="rb4Jogadores" Panel.ZIndex="2" Grid.Row="3" GroupName="nJog" Content="4 jogadores" Foreground="White" FontFamily="Raleway SemiBold" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Button Grid.Row="4" Name="btnConfNumJogadores" Content="Confirmar" Height="45" Width="270" HorizontalAlignment="Center" Padding="10" Background="#FFED1A23" FontFamily="REVOLUTION" VerticalAlignment="Center" Foreground="White" BorderBrush="White" Margin="10" BorderThickness="2" Click="btnConfNumJogadores_Click" />
+        </Grid>
+
+        <!--Espaço do conteúdo em tela de jogo: 6/11 | Nome dos Jogadores-->
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Defina o nome dos jogadores" Foreground="White" Background="#FFED1A23" FontFamily="REVOLUTION" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" BorderThickness="2" BorderBrush="White"/>
+
+            <TextBox Name="txtJog1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" VerticalContentAlignment="Center" Padding="5" Background="#FFED1A23" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" Text="Primeiro jogador" UndoLimit="30" FontSize="16" Height="35" IsEnabled="False" />
+            <TextBox Name="txtJog2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" VerticalContentAlignment="Center" Padding="5" Background="#FFED1A23" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" Text="Segundo jogador" UndoLimit="30" FontSize="16" Height="35" IsEnabled="False" />
+            <TextBox Name="txtJog3" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" VerticalContentAlignment="Center" Padding="5" Background="#FFED1A23" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" Text="Terceiro jogador" UndoLimit="30" FontSize="16" Height="35" IsEnabled="False" />
+            <TextBox Name="txtJog4" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" VerticalContentAlignment="Center" Padding="5" Background="#FFED1A23" SelectionBrush="#FFC80023" BorderBrush="White" Foreground="White" FontFamily="Raleway SemiBold" BorderThickness="2" Text="Quarto jogador" UndoLimit="30" FontSize="16" Height="35" IsEnabled="False" />
+        </Grid>
+
+        <!--Espaço do conteudo parte 2 em tela de jogo: 1/11-->
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button Grid.Row="1" Name="btnJogar" Content="Jogar" Height="45" Width="270" HorizontalAlignment="Center" Padding="10" Background="#FFED1A23" FontFamily="REVOLUTION" VerticalAlignment="Center" Foreground="White" BorderBrush="White" Margin="10" BorderThickness="2" Click="btnJogar_Click" />
+        </Grid>
+        
+    </Grid>
+</Window>
